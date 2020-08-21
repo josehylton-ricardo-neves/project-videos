@@ -3,6 +3,11 @@ const { Router } = require('express');
 const app = require('express')();
 const routes = require('./routers/routes')
 
+require('dotenv').config();
+
 app.use(routes)
 
-app.listen(3000, () => console.log('listen on port 3000'));
+
+
+
+app.listen(process.env.PORT, () => console.log('listen on port 3000'));
