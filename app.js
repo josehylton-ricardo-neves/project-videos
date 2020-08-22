@@ -1,11 +1,12 @@
-const { Router } = require('express');
+const express = require('express');
+const routes = require('./routers/routes');
 
-const app = require('express')();
-const routes = require('./routers/routes')
+const app = express();
 
 require('dotenv').config();
 
-
+app.use(express.json());
+app.use(express.urlencoded( {extended = true} ));
 app.use(routes)
 
 
